@@ -44,7 +44,7 @@ remove();
 
 info("Informational message with scope", Some("myscope"), None);
 info(
-    "Informational message with scope without new line",
+    "Informational message without new line",
     None,
     Some(false),
 );
