@@ -31,6 +31,7 @@ pretest = "cargo cmd format && cargo outdated && cargo audit"
 test = "cargo test -- --nocapture"
 prepublish = "cargo cmd test"
 publish = "cargo release minor"
+example = "cargo run --example simple"
 
 [badges]
 travis-ci = { repository = "jesusprubio/leg" }
