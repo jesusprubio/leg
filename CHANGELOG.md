@@ -23,4 +23,4 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - First release.
 
 [unreleased]: https://github.com/jesusprubio/leg/compare/0.1.0...HEAD
-[0.1.0]: https://github.com/jesusprubio/leg/compare/TODO...0.1.0
+[0.1.0]: https://github.com/jesusprubio/leg/compare/931c49f3fb54e24c44562e6082a915655d18be2e...0.1.0
