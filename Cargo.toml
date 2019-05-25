@@ -1,0 +1,39 @@
+[package]
+name = "leg"
+version = "0.0.1"
+authors = ["Jesús Rubio <jesusprubio@member.fsf.org>"]
+edition = "2018"
+documentation = "https://docs.rs/leg"
+include = ["src/**/*", "Cargo.toml"]
+
+description = "🔈 Delightful logging made simple"
+repository = "https://github.com/jesusprubio/leg.git"
+readme = "README.md"
+keywords = [
+  "log",
+  "logger",
+  "print",
+  "println",
+  "cli"
+]
+categories = [
+  "command-line-interface",
+  "command-line-utilities",
+  "development-tools"
+]
+license = "MIT"
+
+[package.metadata.commands]
+deps = "cargo install cargo-edit cargo-audit cargo-release cargo-outdated && rustup component add rustfmt clippy"
+format = "cargo fmt"
+postformat = "cargo clippy"
+pretest = "cargo cmd format && cargo outdated && cargo audit"
+test = "cargo test -- --nocapture"
+prepublish = "cargo cmd test"
+publish = "cargo release minor"
+
+[badges]
+travis-ci = { repository = "jesusprubio/leg" }
+
+[dependencies]
+colored = "1.8.0"
