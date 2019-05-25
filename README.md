@@ -5,7 +5,7 @@
 </h4>
 
 <div align="center">
-  <img alt="Logo" src="https://lh3.googleusercontent.com/3fgcob6Lu01_GsumPmUqi05PKoal2lKaUdlhda2eiiX0Vie8Slc9CLAscO3kRmgqd9KM_RSVnE_crWCrw1U915d0qVOrZTnYcf-pdYLB6H9c7RtRCYRaRScBSjQUUd7CzCTM9_JNlfgdZO7zAyL9tQ9EiZtQPA" width="80%">
+  <img alt="Demo" src="https://i.ibb.co/zfp6WNM/leg-demo.png" width="80%">
 </div>
 
 <p align="center">
