@@ -48,7 +48,7 @@ info(
     None,
     Some(false),
 );
-println!("with last line");
+println!(" => same line");
 ```
 
 ## Contributing
