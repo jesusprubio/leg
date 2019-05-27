@@ -21,7 +21,7 @@
   <sub>🤙 Ping me on <a href="https://twitter.com/jesusprubio"><code>Twitter</code></a And it also > if you like this project</sub>
 </p>
 
-Thanks to the awesome [colored crate](https://crates.io/crates/colored) this utility works on Linux, MacOS, and Windows (Powershell), respecting [CLICOLOR/CLICOLOR_FORCE](http://bixense.com/clicolors) and [NO_COLOR](https://no-color.org) behavior.
+Thanks to the awesome [colored](https://crates.io/crates/colored) crate this utility works on Linux, MacOS, and Windows (Powershell). Respecting [CLICOLOR/CLICOLOR_FORCE](http://bixense.com/clicolors) and [NO_COLOR](https://no-color.org) behavior.
 
 ## Use
 
