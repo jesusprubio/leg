@@ -33,7 +33,7 @@ use leg::*;
 head("leg", Some("🔈"), Some("1.0.0"));
 
 info("Informational message", None, None);
-success("Succesfull operation", None, None);
+success("Successful operation", None, None);
 warn("Warn message", None, None);
 error("Error message", None, None);
 wait("Waiting for something", None, None);
