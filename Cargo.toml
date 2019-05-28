@@ -6,7 +6,7 @@ edition = "2018"
 documentation = "https://docs.rs/leg"
 include = ["src/**/*", "Cargo.toml"]
 
-description = "🔈 Elegant program output made simple"
+description = "🔈 Elegant CLI output made simple"
 repository = "https://github.com/jesusprubio/leg.git"
 readme = "README.md"
 keywords = [

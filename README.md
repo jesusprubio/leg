@@ -1,11 +1,11 @@
 <h1 align="center">leg</h1>
 
 <h4 align="center">
-  🔈 Elegant program output made simple
+  🔈 Elegant CLI output made simple
 </h4>
 
 <div align="center">
-  <img alt="Demo" src="https://i.ibb.co/zfp6WNM/leg-demo.png" width="80%">
+  <img alt="Demo" src="https://i.ibb.co/zfp6WNM/leg-demo.png" width="60%">
 </div>
 
 <p align="center">
@@ -21,7 +21,10 @@
   <sub>🤙 Ping me on <a href="https://twitter.com/jesusprubio"><code>Twitter</code></a And it also > if you like this project</sub>
 </p>
 
-Thanks to the awesome [colored](https://crates.io/crates/colored) crate this utility works on Linux, MacOS, and Windows (Powershell). Respecting [CLICOLOR/CLICOLOR_FORCE](http://bixense.com/clicolors) and [NO_COLOR](https://no-color.org) behavior.
+This library prints to `stderr` to be nice with your pipes. Moreover, thanks to the awesome [colored](https://crates.io/crates/colored) crate:
+
+- Works on Linux, MacOS, and Windows (Powershell).
+- Respects [CLICOLOR/CLICOLOR_FORCE](http://bixense.com/clicolors) and [NO_COLOR](https://no-color.org) behavior.
 
 ## Use
 
