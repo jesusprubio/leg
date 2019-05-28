@@ -21,7 +21,7 @@
   <sub>🤙 Ping me on <a href="https://twitter.com/jesusprubio"><code>Twitter</code></a And it also > if you like this project</sub>
 </p>
 
-Thanks to the awesome [colored crate](https://crates.io/crates/colored) this utility works on Linux, MacOS, and Windows (Powershell), respecting [CLICOLOR/CLICOLOR_FORCE](http://bixense.com/clicolors) and [NO_COLOR](https://no-color.org) behavior.
+Thanks to the awesome [colored](https://crates.io/crates/colored) crate this utility works on Linux, MacOS, and Windows (Powershell). Respecting [CLICOLOR/CLICOLOR_FORCE](http://bixense.com/clicolors) and [NO_COLOR](https://no-color.org) behavior.
 
 ## Use
 
@@ -33,7 +33,7 @@ use leg::*;
 head("leg", Some("🔈"), Some("1.0.0"));
 
 info("Informational message", None, None);
-success("Succesfull operation", None, None);
+success("Successful operation", None, None);
 warn("Warn message", None, None);
 error("Error message", None, None);
 wait("Waiting for something", None, None);
