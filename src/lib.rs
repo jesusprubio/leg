@@ -11,7 +11,7 @@ use colored::*;
 /// * `tag` - String to use as prefix (after scope).
 /// * `message` - String to print.
 /// * `scope` - Preffix to append.
-/// * `ln` - Use `println` instead `print` (default: true).
+/// * `ln` - Use `eprintln` instead `eprint` (default: true).
 pub fn custom(tag: &ColoredString, message: &str, scope: Option<&str>, ln: Option<bool>) {
     let pref = match scope {
         None => "".to_string(),
@@ -21,8 +21,8 @@ pub fn custom(tag: &ColoredString, message: &str, scope: Option<&str>, ln: Optio
     let to_print = format!("{} {} {}", pref.dimmed(), tag, message);
 
     match ln {
-        Some(false) => print!("{}", to_print),
-        _ => println!("{}", to_print),
+        Some(false) => eprint!("{}", to_print),
+        _ => eprintln!("{}", to_print),
     }
 }
 
@@ -41,7 +41,7 @@ pub fn head(name: &str, icon: Option<&str>, version: Option<&str>) {
         Some(i) => i,
     };
 
-    println!("\n\t{} {}{} ", ico, name.bold().underline(), ver.dimmed());
+    eprintln!("\n\t{} {}{} ", ico, name.bold().underline(), ver.dimmed());
 }
 
 /// Informational message.
@@ -100,5 +100,5 @@ pub fn done(message: &str, scope: Option<&str>, ln: Option<bool>) {
 
 /// Put the cursor at the init of the actual line.
 pub fn remove() {
-    print!("\r");
+    eprint!("\r");
 }
