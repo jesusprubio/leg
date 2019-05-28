@@ -1,7 +1,7 @@
 <h1 align="center">leg</h1>
 
 <h4 align="center">
-  🔈 Elegant logging made simple
+  🔈 Elegant program output made simple
 </h4>
 
 <div align="center">

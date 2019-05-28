@@ -16,6 +16,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [0.1.2] - 2019-05-28
+
+### ✏️ Changed
+
+- Project description improvement to clarify it's thought for CLIs.
+
 ## [0.1.1] - 2019-05-25
 
 ### 🎉 Added
