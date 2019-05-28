@@ -16,6 +16,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [0.1.3] - 2019-05-28
+
+### ✏️ Changed
+
+- New project description improvement.
+- Printing to `stderr` to be POSIX friendly.
+
 ## [0.1.2] - 2019-05-28
 
 ### ✏️ Changed
@@ -38,7 +45,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - First release.
 
-[unreleased]: https://github.com/jesusprubio/leg/compare/0.1.2...HEAD
+[unreleased]: https://github.com/jesusprubio/leg/compare/0.1.3...HEAD
+[0.1.3]: https://github.com/jesusprubio/leg/compare/0.1.2...0.1.3
 [0.1.2]: https://github.com/jesusprubio/leg/compare/0.1.1...0.1.2
 [0.1.1]: https://github.com/jesusprubio/leg/compare/0.1.0...0.1.1
 [0.1.0]: https://github.com/jesusprubio/leg/compare/931c49f3fb54e24c44562e6082a915655d18be2e...0.1.0
