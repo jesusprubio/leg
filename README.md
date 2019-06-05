@@ -1,7 +1,7 @@
 <h1 align="center">leg</h1>
 
 <h4 align="center">
-  🔈 Elegant CLI output made simple
+  🔈 Elegant output for CLIs made simple
 </h4>
 
 <div align="center">
