@@ -38,3 +38,9 @@ travis-ci = { repository = "jesusprubio/leg" }
 
 [dependencies]
 colored = "1.8.0"
+env_logger = { version = "0.7.0", optional = true }
+log = { version = "0.4.8", optional = true }
+
+[features]
+default = []
+log_crate = ["env_logger", "log"]

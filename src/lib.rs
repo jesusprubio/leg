@@ -6,99 +6,206 @@
  */
 use colored::*;
 
-/// Create a custom logger.
-///
-/// * `tag` - String to use as prefix (after scope).
-/// * `message` - String to print.
-/// * `scope` - Preffix to append.
-/// * `ln` - Use `eprintln` instead `eprint` (default: true).
-pub fn custom(tag: &ColoredString, message: &str, scope: Option<&str>, ln: Option<bool>) {
-    let pref = match scope {
-        None => "".to_string(),
-        Some(p) => format!("[{}]", p),
-    };
+mod default_logger;
+pub use default_logger::*;
 
-    let to_print = format!("{} {} {}", pref.dimmed(), tag, message);
+#[cfg(feature = "log_crate")]
+mod log_support;
+#[cfg(feature = "log_crate")]
+pub use log_support::*;
 
-    match ln {
-        Some(false) => eprint!("{}", to_print),
-        _ => eprintln!("{}", to_print),
+/// Logger.
+pub struct Logger;
+
+impl Logger {
+    /// Create a custom logger.
+    ///
+    /// * `writer` - A writer to output a log.
+    /// * `tag` - String to use as prefix (after scope).
+    /// * `message` - String to print.
+    /// * `scope` - Preffix to append.
+    /// * `ln` - Use `eprintln` instead `eprint` (default: true).
+    pub fn custom<W: std::io::Write>(
+        writer: W,
+        tag: &ColoredString,
+        message: &str,
+        scope: Option<&str>,
+        ln: Option<bool>,
+    ) -> std::io::Result<()> {
+        let pref = match scope {
+            None => "".to_string(),
+            Some(p) => format!("[{}]", p),
+        };
+
+        let mut writer = writer;
+
+        write!(writer, "{} {} {}", pref.dimmed(), tag, message)?;
+
+        if ln.unwrap_or(true) {
+            writeln!(writer)?;
+        }
+
+        Ok(())
     }
-}
 
-/// Simple header/title for CLIs.
-///
-/// * `name` - Name of the project.
-/// * `version` - Include also the version.
-pub fn head(name: &str, icon: Option<&str>, version: Option<&str>) {
-    let ver = match version {
-        None => "".to_string(),
-        Some(v) => format!("\n\t(v{})\n", v),
-    };
+    /// Simple header/title for CLIs.
+    ///
+    /// * `writer` - A writer to output a log.
+    /// * `name` - Name of the project.
+    /// * `version` - Include also the version.
+    pub fn head<W: std::io::Write>(
+        writer: W,
+        name: &str,
+        icon: Option<&str>,
+        version: Option<&str>,
+    ) -> std::io::Result<()> {
+        let ver = match version {
+            None => "".to_string(),
+            Some(v) => format!("\n\t(v{})\n", v),
+        };
 
-    let ico = match icon {
-        None => "",
-        Some(i) => i,
-    };
+        let ico = match icon {
+            None => "",
+            Some(i) => i,
+        };
 
-    eprintln!("\n\t{} {}{} ", ico, name.bold().underline(), ver.dimmed());
-}
+        let mut writer = writer;
 
-/// Informational message.
-///
-/// * `message` - String to print.
-/// * `scope` - Preffix to append.
-/// * `ln` - To print in the same line instead  (default: false).
-pub fn info(message: &str, scope: Option<&str>, ln: Option<bool>) {
-    custom(&"ℹ".blue().bold(), message, scope, ln);
-}
+        write!(
+            writer,
+            "\n\t{} {}{}",
+            ico,
+            name.bold().underline(),
+            ver.dimmed()
+        )
+    }
 
-/// Succesfull operation.
-///
-/// * `message` - String to print.
-/// * `scope` - Preffix to append.
-/// * `ln` - To print in the same line instead  (default: false).
-pub fn success(message: &str, scope: Option<&str>, ln: Option<bool>) {
-    custom(&"✔".green().bold(), message, scope, ln);
-}
+    /// Informational message.
+    ///
+    /// * `writer` - A writer to output a log.
+    /// * `message` - String to print.
+    /// * `scope` - Preffix to append.
+    /// * `ln` - To print in the same line instead  (default: false).
+    pub fn info<W: std::io::Write>(
+        writer: W,
+        message: &str,
+        scope: Option<&str>,
+        ln: Option<bool>,
+    ) -> std::io::Result<()> {
+        Self::custom(writer, &"ℹ".blue().bold(), message, scope, ln)
+    }
 
-/// Warn message.
-///
-/// * `message` - String to print.
-/// * `scope` - Preffix to append.
-/// * `ln` - To print in the same line instead  (default: false).
-pub fn warn(message: &str, scope: Option<&str>, ln: Option<bool>) {
-    custom(&"⚠".yellow().bold(), message, scope, ln);
-}
+    /// Succesfull operation.
+    ///
+    /// * `writer` - A writer to output a log.
+    /// * `message` - String to print.
+    /// * `scope` - Preffix to append.
+    /// * `ln` - To print in the same line instead  (default: false).
+    pub fn success<W: std::io::Write>(
+        writer: W,
+        message: &str,
+        scope: Option<&str>,
+        ln: Option<bool>,
+    ) -> std::io::Result<()> {
+        Self::custom(writer, &"✔".green().bold(), message, scope, ln)
+    }
 
-/// Error message.
-///
-/// * `message` - String to print.
-/// * `scope` - Preffix to append.
-/// * `ln` - To print in the same line instead  (default: false).
-pub fn error(message: &str, scope: Option<&str>, ln: Option<bool>) {
-    custom(&"✖".red().bold(), message, scope, ln);
-}
+    /// Warn message.
+    ///
+    /// * `writer` - A writer to output a log.
+    /// * `message` - String to print.
+    /// * `scope` - Preffix to append.
+    /// * `ln` - To print in the same line instead  (default: false).
+    pub fn warn<W: std::io::Write>(
+        writer: W,
+        message: &str,
+        scope: Option<&str>,
+        ln: Option<bool>,
+    ) -> std::io::Result<()> {
+        Self::custom(writer, &"⚠".yellow().bold(), message, scope, ln)
+    }
 
-/// Waiting for something.
-///
-/// * `message` - String to print.
-/// * `scope` - Preffix to append.
-/// * `ln` - To print in the same line instead  (default: false).
-pub fn wait(message: &str, scope: Option<&str>, ln: Option<bool>) {
-    custom(&"…".magenta().bold(), message, scope, ln);
-}
+    /// Error message.
+    ///
+    /// * `writer` - A writer to output a log.
+    /// * `message` - String to print.
+    /// * `scope` - Preffix to append.
+    /// * `ln` - To print in the same line instead  (default: false).
+    pub fn error<W: std::io::Write>(
+        writer: W,
+        message: &str,
+        scope: Option<&str>,
+        ln: Option<bool>,
+    ) -> std::io::Result<()> {
+        Self::custom(writer, &"✖".red().bold(), message, scope, ln)
+    }
 
-/// Something finished.
-///
-/// * `message` - String to print.
-/// * `scope` - Preffix to append.
-/// * `ln` - To print in the same line instead  (default: false).
-pub fn done(message: &str, scope: Option<&str>, ln: Option<bool>) {
-    custom(&"☒".cyan().bold(), message, scope, ln);
-}
+    /// Waiting for something.
+    ///
+    /// * `writer` - A writer to output a log.
+    /// * `message` - String to print.
+    /// * `scope` - Preffix to append.
+    /// * `ln` - To print in the same line instead  (default: false).
+    pub fn wait<W: std::io::Write>(
+        writer: W,
+        message: &str,
+        scope: Option<&str>,
+        ln: Option<bool>,
+    ) -> std::io::Result<()> {
+        Self::custom(writer, &"…".magenta().bold(), message, scope, ln)
+    }
 
-/// Put the cursor at the init of the actual line.
-pub fn remove() {
-    eprint!("\r");
+    /// Something finished.
+    ///
+    /// * `writer` - A writer to output a log.
+    /// * `message` - String to print.
+    /// * `scope` - Preffix to append.
+    /// * `ln` - To print in the same line instead  (default: false).
+    pub fn done<W: std::io::Write>(
+        writer: W,
+        message: &str,
+        scope: Option<&str>,
+        ln: Option<bool>,
+    ) -> std::io::Result<()> {
+        Self::custom(writer, &"☒".cyan().bold(), message, scope, ln)
+    }
+
+    /// Trace log.
+    ///
+    /// * `writer` - A writer to output a log.
+    /// * `message` - String to print.
+    /// * `scope` - Preffix to append.
+    /// * `ln` - To print in the same line instead  (default: false).
+    pub fn trace<W: std::io::Write>(
+        writer: W,
+        message: &str,
+        scope: Option<&str>,
+        ln: Option<bool>,
+    ) -> std::io::Result<()> {
+        Self::custom(writer, &"🔍".blue().bold(), message, scope, ln)
+    }
+
+    /// Debug log.
+    ///
+    /// * `writer` - A writer to output a log.
+    /// * `message` - String to print.
+    /// * `scope` - Preffix to append.
+    /// * `ln` - To print in the same line instead  (default: false).
+    pub fn debug<W: std::io::Write>(
+        writer: W,
+        message: &str,
+        scope: Option<&str>,
+        ln: Option<bool>,
+    ) -> std::io::Result<()> {
+        Self::custom(writer, &"🐛".green().bold(), message, scope, ln)
+    }
+
+    /// Put the cursor at the init of the actual line.
+    ///
+    /// * `writer` - A writer to output a log.
+    pub fn remove<W: std::io::Write>(writer: W) -> std::io::Result<()> {
+        let mut writer = writer;
+
+        write!(writer, "\r")
+    }
 }
