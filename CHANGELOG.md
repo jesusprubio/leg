@@ -16,6 +16,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [0.1.4] - 2019-09-30
+
+### 🎉 Added
+
+- [log](https://github.com/rust-lang-nursery/log) crate support. (by @3c1u)
+
 ## [0.1.3] - 2019-05-28
 
 ### ✏️ Changed
