@@ -21,7 +21,7 @@
   <sub>🤙 Ping me on <a href="https://twitter.com/jesusprubio"><code>Twitter</code></a And it also > if you like this project</sub>
 </p>
 
-- [log](https://github.com/rust-lang-nursery/log) crate support.
+- Crate [log](https://github.com/rust-lang-nursery/log) support.
 - Prints to `stderr` to be nice with your pipes.
 - Thanks to the awesome [colored](https://crates.io/crates/colored) crate:
   - Works on Linux, MacOS, and Windows (Powershell).
@@ -29,7 +29,7 @@
 
 ## Use
 
-📝 Please visit [the full documentation](https://docs.rs/leg) if you want to learn the details.
+📝 Please visit [the example](examples) and [full documentation](https://docs.rs/leg) if you want to learn the details.
 
 ```rust
 use leg::*;

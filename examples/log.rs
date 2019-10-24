@@ -1,7 +1,8 @@
 use leg::*;
 
 #[cfg(not(feature = "log_crate"))]
-fn main() {}
+fn main() {
+}
 
 #[cfg(feature = "log_crate")]
 fn main() {

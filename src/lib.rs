@@ -1,13 +1,15 @@
 /**
- * Copyright (c) 2019, Jesús Rubio <jesusprubio@member.fsf.org>
+ * Copyright (c) 2019, Jesús Rubio <jesusprubio@gmail.com>
+ *                     Hikaru Terazono <3c1u@vulpesgames.tokyo>
  *
  * This source code is licensed under the MIT License found in
  * the LICENSE.txt file in the root directory of this source tree.
  */
+
 use colored::*;
 
-mod default_logger;
-pub use default_logger::*;
+mod printer;
+pub use printer::*;
 
 #[cfg(feature = "log_crate")]
 mod log_support;
