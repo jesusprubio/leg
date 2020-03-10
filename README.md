@@ -1,7 +1,7 @@
 <h1 align="center">leg</h1>
 
 <h4 align="center">
-  🔈 Elegant logging made simple
+  🔈 Elegant logging for CLIs made simple
 </h4>
 
 <div align="center">
@@ -21,15 +21,16 @@
   <sub>🤙 Ping me on <a href="https://twitter.com/jesusprubio"><code>Twitter</code></a And it also > if you like this project</sub>
 </p>
 
-- Crate [log](https://github.com/rust-lang-nursery/log) support.
 - Prints to `stderr` to be nice with your pipes.
 - Thanks to the awesome [colored](https://crates.io/crates/colored) crate:
   - Works on Linux, MacOS, and Windows (Powershell).
   - Respects [CLICOLOR/CLICOLOR_FORCE](http://bixense.com/clicolors) and [NO_COLOR](https://no-color.org) behavior.
 
+**Do not use this crate in your libraries, use the [log](https://github.com/rust-lang-nursery/log) instead**
+
 ## Use
 
-📝 Please visit [the example](examples) and [full documentation](https://docs.rs/leg) if you want to learn the details.
+📝 Please visit [tests](tests/lib.rs) and [full documentation](https://docs.rs/leg) if you want to learn the details.
 
 ```rust
 use leg::*;

@@ -16,6 +16,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [0.3.0] - 2020-03-10
+
+### ❌ Removed
+
+- [log](https://github.com/rust-lang-nursery/log) crate support to keep the project focus simple.
+
 ## [0.2.0] - 2019-10-24
 
 ### 🎉 Added
@@ -51,7 +57,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - First release.
 
-[unreleased]: https://github.com/jesusprubio/leg/compare/0.2.0...HEAD
+[unreleased]: https://github.com/jesusprubio/leg/compare/0.3.0...HEAD
+[0.3.0]: https://github.com/jesusprubio/leg/compare/0.2.0...0.3.0
 [0.2.0]: https://github.com/jesusprubio/leg/compare/0.1.3...0.2.0
 [0.1.3]: https://github.com/jesusprubio/leg/compare/0.1.2...0.1.3
 [0.1.2]: https://github.com/jesusprubio/leg/compare/0.1.1...0.1.2

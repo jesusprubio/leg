@@ -6,7 +6,7 @@ edition = "2018"
 documentation = "https://docs.rs/leg"
 include = ["src/**/*", "Cargo.toml"]
 
-description = "🔈 Elegant logging made simple"
+description = "🔈 Elegant logging for CLIs made simple"
 repository = "https://github.com/jesusprubio/leg.git"
 readme = "README.md"
 keywords = [
@@ -24,10 +24,10 @@ categories = [
 license = "MIT"
 
 [package.metadata.commands]
-deps = "cargo install cargo-edit cargo-audit cargo-release cargo-outdated && rustup component add rustfmt clippy"
+deps = "cargo install cargo-audit cargo-release && rustup component add rustfmt clippy"
 format = "cargo fmt"
 postformat = "cargo clippy"
-pretest = "cargo cmd format && cargo outdated && cargo audit"
+pretest = "cargo cmd format && cargo audit"
 test = "cargo test -- --nocapture"
 prepublish = "cargo cmd test"
 publish = "cargo release minor"
@@ -38,9 +38,3 @@ travis-ci = { repository = "jesusprubio/leg" }
 
 [dependencies]
 colored = "1.8.0"
-env_logger = { version = "0.7.0", optional = true }
-log = { version = "0.4.8", optional = true }
-
-[features]
-default = []
-log_crate = ["env_logger", "log"]
