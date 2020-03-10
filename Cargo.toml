@@ -24,13 +24,11 @@ categories = [
 license = "MIT"
 
 [package.metadata.commands]
-deps = "cargo install cargo-audit cargo-release && rustup component add rustfmt clippy"
+deps = "cargo install cargo-audit && rustup component add rustfmt clippy"
 format = "cargo fmt"
 postformat = "cargo clippy"
 pretest = "cargo cmd format && cargo audit"
 test = "cargo test -- --nocapture"
-prepublish = "cargo cmd test"
-publish = "cargo release minor"
 example = "cargo run --example simple"
 
 [badges]
