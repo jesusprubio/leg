@@ -18,9 +18,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [0.3.0] - 2020-03-10
 
+### 🐛 Fixed
+
+- Test and the README example for the `remove` function.
+
 ### ❌ Removed
 
-- [log](https://github.com/rust-lang-nursery/log) crate support to keep the project focus simple.
+- [log](https://github.com/rust-lang-nursery/log) crate support to keep the project focus simpler.
+- The development dependencies out of the CI workflow.
 
 ## [0.2.0] - 2019-10-24
 

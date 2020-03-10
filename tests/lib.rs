@@ -12,6 +12,9 @@ use leg::*;
 fn should_work() {
     head("leg", Some("🔈"), Some("1.0.0"));
 
+    eprint!("Not shown");
+    remove();
+
     info("Informational message", None, None);
     info("Informational message with scope", Some("myscope"), None);
     info("Informational message without new line", None, Some(false));
@@ -65,7 +68,4 @@ fn should_work() {
         Some("myscope"),
         Some(false),
     );
-
-    eprint!("Not shown");
-    remove();
 }
