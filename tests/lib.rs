@@ -66,6 +66,6 @@ fn should_work() {
         Some(false),
     );
 
-    print!("Not shown");
+    eprint!("Not shown");
     remove();
 }

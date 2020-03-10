@@ -44,16 +44,16 @@ error("Error message", None, None);
 wait("Waiting for something", None, None);
 done("Something finished", None, None);
 
-print!("Not shown");
-remove();
-
 info("Informational message with scope", Some("myscope"), None);
 info(
     "Informational message without new line",
     None,
     Some(false),
 );
-println!(" => same line");
+eprintln!(" => same line");
+
+eprint!("Not shown");
+remove();
 ```
 
 ## Contributing
