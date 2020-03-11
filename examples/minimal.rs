@@ -8,6 +8,4 @@ use leg::*;
 
 fn main() {
     info("Informational message", None, None);
-
-    result("Informational message");
 }

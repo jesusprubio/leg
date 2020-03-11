@@ -107,5 +107,5 @@ pub fn remove() {
 ///
 /// * `message` - String to print.
 pub fn result(message: &str) {
-    eprintln!("{}", message);
+    println!("{}", message);
 }
