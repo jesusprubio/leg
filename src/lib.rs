@@ -102,3 +102,10 @@ pub fn done(message: &str, scope: Option<&str>, ln: Option<bool>) {
 pub fn remove() {
     eprint!("\r");
 }
+
+/// Print the final result to the standard output.
+///
+/// * `message` - String to print.
+pub fn result(message: &str) {
+    eprintln!("{}", message);
+}

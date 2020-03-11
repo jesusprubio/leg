@@ -54,6 +54,8 @@ eprintln!(" => same line");
 
 eprint!("Not shown");
 remove();
+
+result("To standard output")
 ```
 
 ## Contributing

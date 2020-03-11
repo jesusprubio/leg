@@ -16,11 +16,17 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [0.4.0] - 2020-03-11
+
+### 🎉 Added
+
+- Helper `result`.
+
 ## [0.3.0] - 2020-03-10
 
 ### 🐛 Fixed
 
-- Test and the README example for the `remove` function.
+- Test and the README example for the `remove` helper.
 
 ### ❌ Removed
 

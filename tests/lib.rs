@@ -68,4 +68,6 @@ fn should_work() {
         Some("myscope"),
         Some(false),
     );
+
+    result("Result printed to the standard output");
 }
