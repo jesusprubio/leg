@@ -26,7 +26,7 @@
   - Works on Linux, MacOS, and Windows (Powershell).
   - Respects [CLICOLOR/CLICOLOR_FORCE](http://bixense.com/clicolors) and [NO_COLOR](https://no-color.org) behavior.
 
-**Do not use this crate in your libraries! use the [log](https://github.com/rust-lang-nursery/log) instead.**
+**Do not use this crate in your libraries! You should use the [log](https://github.com/rust-lang-nursery/log) one instead.**
 
 ## Use
 
