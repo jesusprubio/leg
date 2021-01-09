@@ -6,68 +6,75 @@
  */
 
 #[cfg(test)]
+use async_std::eprint;
 use leg::*;
 
-#[test]
-fn should_work() {
-    head("leg", Some("🔈"), Some("1.0.0"));
+#[async_std::test]
+async fn should_work() {
+    head("leg", Some("🔈"), Some("1.0.0")).await;
 
-    eprint!("Not shown");
-    remove();
+    eprint!("Not shown").await;
+    remove().await;
 
-    info("Informational message", None, None);
-    info("Informational message with scope", Some("myscope"), None);
-    info("Informational message without new line", None, Some(false));
+    info("Informational message", None, None).await;
+    info("Informational message with scope", Some("myscope"), None).await;
+    info("Informational message without new line", None, Some(false)).await;
     info(
         "Informational message with scope without new line",
         Some("myscope"),
         Some(false),
-    );
+    )
+    .await;
 
-    success("Succesfull operation", None, None);
-    success("Succesfull operation with scope", Some("myscope"), None);
-    success("Succesfull operation without new line", None, Some(false));
+    success("Succesfull operation", None, None).await;
+    success("Succesfull operation with scope", Some("myscope"), None).await;
+    success("Succesfull operation without new line", None, Some(false)).await;
     success(
         "Succesfull operation with scope without new line",
         Some("myscope"),
         Some(false),
-    );
+    )
+    .await;
 
-    warn("Warn message", None, None);
-    warn("Warn message with scope", Some("myscope"), None);
-    warn("Warn message without new line", None, Some(false));
+    warn("Warn message", None, None).await;
+    warn("Warn message with scope", Some("myscope"), None).await;
+    warn("Warn message without new line", None, Some(false)).await;
     warn(
         "Warn message with scope without new line",
         Some("myscope"),
         Some(false),
-    );
+    )
+    .await;
 
-    error("Error message", None, None);
-    error("Error message with scope", Some("myscope"), None);
-    error("Error message without new line", None, Some(false));
+    error("Error message", None, None).await;
+    error("Error message with scope", Some("myscope"), None).await;
+    error("Error message without new line", None, Some(false)).await;
     error(
         "Error message with scope without new line",
         Some("myscope"),
         Some(false),
-    );
+    )
+    .await;
 
-    wait("Waiting for something", None, None);
-    wait("Waiting for something with scope", Some("myscope"), None);
-    wait("Waiting for something without new line", None, Some(false));
+    wait("Waiting for something", None, None).await;
+    wait("Waiting for something with scope", Some("myscope"), None).await;
+    wait("Waiting for something without new line", None, Some(false)).await;
     wait(
         "Waiting for something with scope without new line",
         Some("myscope"),
         Some(false),
-    );
+    )
+    .await;
 
-    done("Something finished", None, None);
-    done("Something finished with scope", Some("myscope"), None);
-    done("Something finished without new line", None, Some(false));
+    done("Something finished", None, None).await;
+    done("Something finished with scope", Some("myscope"), None).await;
+    done("Something finished without new line", None, Some(false)).await;
     done(
         "Something finished with scope without new line",
         Some("myscope"),
         Some(false),
-    );
+    )
+    .await;
 
-    result("Result printed to the standard output");
+    result("Result printed to the standard output").await;
 }

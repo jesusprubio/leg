@@ -6,7 +6,7 @@ edition = "2018"
 documentation = "https://docs.rs/leg"
 include = ["src/**/*", "Cargo.toml"]
 
-description = "🔈 Elegant logging for CLIs made simple"
+description = "🔈 Elegant print for lazy devs (async-std)"
 repository = "https://github.com/jesusprubio/leg.git"
 readme = "README.md"
 keywords = [
@@ -35,4 +35,8 @@ example = "cargo run --example simple"
 travis-ci = { repository = "jesusprubio/leg" }
 
 [dependencies]
-colored = "1.8.0"
+colored = "2.0.0"
+
+[dependencies.async-std]
+version = "1.8.0"
+features = ["unstable", "attributes"]

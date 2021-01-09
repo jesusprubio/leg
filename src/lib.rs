@@ -4,6 +4,8 @@
  * This source code is licensed under the MIT License found in
  * the LICENSE.txt file in the root directory of this source tree.
  */
+use async_std::{eprint, eprintln, println};
+
 use colored::*;
 
 /// Create a custom logger.
@@ -12,7 +14,7 @@ use colored::*;
 /// * `message` - String to print.
 /// * `scope` - Preffix to append.
 /// * `ln` - Use `eprintln` instead `eprint` (default: true).
-pub fn custom(tag: &ColoredString, message: &str, scope: Option<&str>, ln: Option<bool>) {
+pub async fn custom(tag: &ColoredString, message: &str, scope: Option<&str>, ln: Option<bool>) {
     let pref = match scope {
         None => "".to_string(),
         Some(p) => format!("[{}]", p),
@@ -21,8 +23,8 @@ pub fn custom(tag: &ColoredString, message: &str, scope: Option<&str>, ln: Optio
     let to_print = format!("{} {} {}", pref.dimmed(), tag, message);
 
     match ln {
-        Some(false) => eprint!("{}", to_print),
-        _ => eprintln!("{}", to_print),
+        Some(false) => eprint!("{}", to_print).await,
+        _ => eprintln!("{}", to_print).await,
     }
 }
 
@@ -30,7 +32,7 @@ pub fn custom(tag: &ColoredString, message: &str, scope: Option<&str>, ln: Optio
 ///
 /// * `name` - Name of the project.
 /// * `version` - Include also the version.
-pub fn head(name: &str, icon: Option<&str>, version: Option<&str>) {
+pub async fn head(name: &str, icon: Option<&str>, version: Option<&str>) {
     let ver = match version {
         None => "".to_string(),
         Some(v) => format!("\n\t(v{})\n", v),
@@ -41,7 +43,7 @@ pub fn head(name: &str, icon: Option<&str>, version: Option<&str>) {
         Some(i) => i,
     };
 
-    eprintln!("\n\t{} {}{} ", ico, name.bold().underline(), ver.dimmed());
+    eprintln!("\n\t{} {}{} ", ico, name.bold().underline(), ver.dimmed()).await;
 }
 
 /// Informational message.
@@ -49,8 +51,8 @@ pub fn head(name: &str, icon: Option<&str>, version: Option<&str>) {
 /// * `message` - String to print.
 /// * `scope` - Preffix to append.
 /// * `ln` - To print in the same line instead  (default: false).
-pub fn info(message: &str, scope: Option<&str>, ln: Option<bool>) {
-    custom(&"ℹ".blue().bold(), message, scope, ln);
+pub async fn info(message: &str, scope: Option<&str>, ln: Option<bool>) {
+    custom(&"ℹ".blue().bold(), message, scope, ln).await;
 }
 
 /// Succesfull operation.
@@ -58,8 +60,8 @@ pub fn info(message: &str, scope: Option<&str>, ln: Option<bool>) {
 /// * `message` - String to print.
 /// * `scope` - Preffix to append.
 /// * `ln` - To print in the same line instead  (default: false).
-pub fn success(message: &str, scope: Option<&str>, ln: Option<bool>) {
-    custom(&"✔".green().bold(), message, scope, ln);
+pub async fn success(message: &str, scope: Option<&str>, ln: Option<bool>) {
+    custom(&"✔".green().bold(), message, scope, ln).await;
 }
 
 /// Warn message.
@@ -67,8 +69,8 @@ pub fn success(message: &str, scope: Option<&str>, ln: Option<bool>) {
 /// * `message` - String to print.
 /// * `scope` - Preffix to append.
 /// * `ln` - To print in the same line instead  (default: false).
-pub fn warn(message: &str, scope: Option<&str>, ln: Option<bool>) {
-    custom(&"⚠".yellow().bold(), message, scope, ln);
+pub async fn warn(message: &str, scope: Option<&str>, ln: Option<bool>) {
+    custom(&"⚠".yellow().bold(), message, scope, ln).await;
 }
 
 /// Error message.
@@ -76,8 +78,8 @@ pub fn warn(message: &str, scope: Option<&str>, ln: Option<bool>) {
 /// * `message` - String to print.
 /// * `scope` - Preffix to append.
 /// * `ln` - To print in the same line instead  (default: false).
-pub fn error(message: &str, scope: Option<&str>, ln: Option<bool>) {
-    custom(&"✖".red().bold(), message, scope, ln);
+pub async fn error(message: &str, scope: Option<&str>, ln: Option<bool>) {
+    custom(&"✖".red().bold(), message, scope, ln).await;
 }
 
 /// Waiting for something.
@@ -85,8 +87,8 @@ pub fn error(message: &str, scope: Option<&str>, ln: Option<bool>) {
 /// * `message` - String to print.
 /// * `scope` - Preffix to append.
 /// * `ln` - To print in the same line instead  (default: false).
-pub fn wait(message: &str, scope: Option<&str>, ln: Option<bool>) {
-    custom(&"…".magenta().bold(), message, scope, ln);
+pub async fn wait(message: &str, scope: Option<&str>, ln: Option<bool>) {
+    custom(&"…".magenta().bold(), message, scope, ln).await;
 }
 
 /// Something finished.
@@ -94,18 +96,18 @@ pub fn wait(message: &str, scope: Option<&str>, ln: Option<bool>) {
 /// * `message` - String to print.
 /// * `scope` - Preffix to append.
 /// * `ln` - To print in the same line instead  (default: false).
-pub fn done(message: &str, scope: Option<&str>, ln: Option<bool>) {
-    custom(&"☒".cyan().bold(), message, scope, ln);
+pub async fn done(message: &str, scope: Option<&str>, ln: Option<bool>) {
+    custom(&"☒".cyan().bold(), message, scope, ln).await;
 }
 
 /// Put the cursor at the init of the actual line.
-pub fn remove() {
-    eprint!("\r");
+pub async fn remove() {
+    eprint!("\r").await;
 }
 
 /// Print the final result to the standard output.
 ///
 /// * `message` - String to print.
-pub fn result(message: &str) {
-    println!("{}", message);
+pub async fn result(message: &str) {
+    println!("{}", message).await;
 }
