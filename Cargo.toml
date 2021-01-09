@@ -10,17 +10,24 @@ description = "🔈 Elegant print for lazy devs (async-std)"
 repository = "https://github.com/jesusprubio/leg.git"
 readme = "README.md"
 keywords = [
-  "log",
-  "logger",
   "print",
   "println",
   "cli",
-  "async-std"
+  "log",
+  "logger",
+  "async-std",
+  "task",
+  "std",
+  "future",
+  "await",
+  "async"
 ]
 categories = [
   "command-line-interface",
   "command-line-utilities",
-  "development-tools"
+  "development-tools",
+  "asynchronous",
+  "concurrency"
 ]
 license = "MIT"
 
