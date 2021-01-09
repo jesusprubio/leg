@@ -14,7 +14,8 @@ keywords = [
   "logger",
   "print",
   "println",
-  "cli"
+  "cli",
+  "async-std"
 ]
 categories = [
   "command-line-interface",
