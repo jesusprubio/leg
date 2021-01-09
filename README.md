@@ -10,7 +10,7 @@
 
 <p align="center">
   <a href="https://github.com/jesusprubio/leg/actions">
-    <img alt="Workflow status" src="https://github.com/jesusprubio/leg/workflows/ci/badge.svg">
+    <img alt="Workflow status" src="https://github.com/jesusprubio/leg/workflows/CI/badge.svg">
   </a>
   <a href="https://crates.io/crates/leg">
     <img alt="Latest version" src="https://img.shields.io/crates/v/leg.svg">
