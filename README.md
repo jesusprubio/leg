@@ -9,7 +9,7 @@
 </div>
 
 <p align="center">
-  <a href="https://travis-ci.org/jesusprubio/leg">
+  <a href="https://github.com/jesusprubio/leg/actions">
     <img alt="Workflow status" src="https://github.com/jesusprubio/leg/workflows/ci/badge.svg">
   </a>
   <a href="https://crates.io/crates/leg">
