@@ -32,6 +32,30 @@ pub async fn custom(tag: &ColoredString, message: &str, scope: Option<&str>, ln:
 /// * `name` - Name of the project.
 /// * `version` - Include also the version.
 pub async fn head(name: &str, icon: Option<&str>, version: Option<&str>) {
+    //! ```rust
+    //! use leg::*;
+    //! use async_std::{eprint, eprintln};
+    //!
+    //! #[async_std::main]
+    //! async fn main() {
+    //!     head("leg", Some("🔈"), Some("1.0.0")).await;
+    //!     info("Informational message", None, None).await;
+    //!     success("Successful operation", None, None).await;
+    //!     warn("Warn message", None, None).await;
+    //!     error("Error message", None, None).await;
+    //!     wait("Waiting for something", None, None).await;
+    //!     done("Something finished", None, None).await;
+    //!
+    //!     info("Informational message with scope", Some("myscope"), None).await;
+    //!     info("Informational message without new line", None, Some(false)).await;
+    //!     eprintln!(" => same line").await;
+    //!
+    //!     eprint!("Not shown").await;
+    //!     remove().await;
+    //!
+    //!     result("To standard output").await;
+    //! }
+    //! ```
     let ver = match version {
         None => "".to_string(),
         Some(v) => format!("\n\t(v{})\n", v),

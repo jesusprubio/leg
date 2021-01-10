@@ -11,14 +11,8 @@ repository = "https://github.com/jesusprubio/leg.git"
 readme = "README.md"
 keywords = [
   "print",
-  "println",
   "cli",
   "log",
-  "logger",
-  "async-std",
-  "task",
-  "std",
-  "future",
   "await",
   "async"
 ]
@@ -32,12 +26,12 @@ categories = [
 license = "MIT"
 
 [package.metadata.commands]
-deps = "cargo install cargo-audit && rustup component add rustfmt clippy"
+deps = "cargo install cargo-audit cargo-sync-readme && rustup component add rustfmt clippy"
 format = "cargo fmt"
 postformat = "cargo clippy"
 pretest = "cargo cmd format && cargo audit"
 test = "cargo test -- --nocapture"
-example = "cargo run --example simple"
+posttest = "cargo sync-readme"
 
 [badges]
 travis-ci = { repository = "jesusprubio/leg" }

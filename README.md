@@ -42,14 +42,15 @@ cargo add leg
 
 📝 Please visit [tests](tests/lib.rs) and [full documentation](https://docs.rs/leg) if you want to learn the details.
 
+<!-- cargo-sync-readme start -->
+
 ```rust
-use async_std::{eprint, eprintln};
 use leg::*;
+use async_std::{eprint, eprintln};
 
 #[async_std::main]
 async fn main() {
     head("leg", Some("🔈"), Some("1.0.0")).await;
-
     info("Informational message", None, None).await;
     success("Successful operation", None, None).await;
     warn("Warn message", None, None).await;
@@ -68,6 +69,12 @@ async fn main() {
 }
 ```
 
+<!-- cargo-sync-readme end -->
+
 ## Contributing
 
 😎 If you want to help please take a look to [this file](.github/CONTRIBUTING.md).
+
+```
+
+```
