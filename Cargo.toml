@@ -33,9 +33,6 @@ pretest = "cargo cmd format && cargo audit"
 test = "cargo test -- --nocapture"
 posttest = "cargo sync-readme"
 
-[badges]
-travis-ci = { repository = "jesusprubio/leg" }
-
 [dependencies]
 colored = "2.0.0"
 
