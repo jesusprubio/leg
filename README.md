@@ -16,9 +16,6 @@
     <img alt="Latest version" src="https://img.shields.io/crates/v/leg.svg">
   </a>
 </p>
-<p align="center">
-  <sub>🤙 Ping me on <a href="https://twitter.com/jesusprubio"><code>Twitter</code></a And it also > if you like this project</sub>
-</p>
 
 Make your CLIs nicer with minimal effort. Simple wrapper on top of:
 
