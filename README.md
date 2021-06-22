@@ -67,11 +67,3 @@ async fn main() {
 ```
 
 <!-- cargo-sync-readme end -->
-
-## Contributing
-
-😎 If you want to help please take a look to [this file](.github/CONTRIBUTING.md).
-
-```
-
-```
