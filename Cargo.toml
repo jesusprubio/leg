@@ -37,5 +37,5 @@ posttest = "cargo sync-readme"
 colored = "2.0.0"
 
 [dependencies.async-std]
-version = "1.8.0"
+version = "1.9.0"
 features = ["unstable", "attributes"]

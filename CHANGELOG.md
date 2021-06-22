@@ -16,6 +16,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.0.1] - 2021-06-22
+
+### ✏️ Changed
+
+- Dependencies update.
+
 ## [1.0.0] - 2021-01-09
 
 ### 🎉 Added
@@ -80,7 +86,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - First release.
 
-[unreleased]: https://github.com/jesusprubio/leg/compare/v1.0.0...HEAD
+[unreleased]: https://github.com/jesusprubio/leg/compare/v1.0.1...HEAD
+[1.0.1]: https://github.com/jesusprubio/leg/compare/v1.0.0...v1.0.1
 [1.0.0]: https://github.com/jesusprubio/leg/compare/v0.4.1...v1.0.0
 [0.4.1]: https://github.com/jesusprubio/leg/compare/v0.4.0...v0.4.1
 [0.4.0]: https://github.com/jesusprubio/leg/compare/v0.3.0...v0.4.0
