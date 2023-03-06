@@ -1,4 +1,4 @@
-# 🔈 leg
+# leg
 
 🔈 **Nicer CMDs foz lazy devs**
 
