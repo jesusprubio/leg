@@ -1,0 +1,35 @@
+on: [push, pull_request]
+
+name: CI
+
+jobs:
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+      - name: Install Go
+        uses: actions/setup-go@v3
+        with:
+          go-version: "1.19.5"
+      - name: Install Task
+        uses: arduino/setup-task@v1
+      - name: Install dependencies
+        run: task dep
+      - name: Run linters
+        run: task lint
+  test:
+    name: Unit tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+      - name: Install Go
+        uses: actions/setup-go@v3
+        with:
+          go-version: "1.19.5"
+      - name: Install Task
+        uses: arduino/setup-task@v1
+      - name: Run tests
+        run: task test
