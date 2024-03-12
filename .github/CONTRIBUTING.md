@@ -2,8 +2,10 @@
 
 ## Environment
 
-With a [Task](https://taskfile.dev/installation/) stable version:
+### Dependencies
 
+- [Task](https://taskfile.dev/installation/)
+- Linters:
 ```sh
 task dep
 ```
@@ -13,6 +15,5 @@ task dep
 Please run to be sure the new code makes the linters happy and the tests keep passing:
 
 ```sh
-task lint
 task test
 ```

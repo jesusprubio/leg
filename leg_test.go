@@ -15,7 +15,6 @@ func TestHead(t *testing.T) {
 func TestInfo(t *testing.T) {
 	err := Info("Informational message", "")
 	assert.NoError(t, err)
-
 	err = Info("Informational message with scope", "scope-0")
 	assert.NoError(t, err)
 }
