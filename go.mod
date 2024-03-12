@@ -5,7 +5,7 @@ go 1.19
 require github.com/fatih/color v1.14.1
 
 // Tests
-require github.com/stretchr/testify v1.8.2
+require github.com/stretchr/testify v1.9.0
 
 // Indirect
 require (
