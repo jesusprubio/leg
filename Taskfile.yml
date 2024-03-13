@@ -13,7 +13,8 @@ tasks:
       - go install github.com/kisielk/errcheck@latest
       - go install github.com/segmentio/golines@latest
       - go install github.com/securego/gosec/v2/cmd/gosec@latest
-      - go install github.com/alexkohler/nakedret@latest
+      - go install github.com/alexkohler/nakedret/cmd/nakedret@latest
+
   lint:
     cmds:
       - go fmt ./...
@@ -25,10 +26,10 @@ tasks:
       - nakedret ./...
 
   test:
+    deps: [lint]
     cmds:
       - go test -v ./...
 
   examples:
     cmds:
-      - go run examples/regular/regular.go
-      - go run examples/json/json.go
+      - go run examples/readme.go

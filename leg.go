@@ -8,7 +8,7 @@ import (
 )
 
 // Creates an error for required parameters.
-func newRequiredParam(name string) error {
+func newErrorRequiredParam(name string) error {
 	return fmt.Errorf("missing required parameter '%s'", name)
 }
 
@@ -24,31 +24,20 @@ func printLine(
 	scope string,
 ) error {
 	if tag == "" {
-		return newRequiredParam("tag")
+		return newErrorRequiredParam("tag")
 	}
 	if col == 0 {
-		return newRequiredParam("col")
+		return newErrorRequiredParam("col")
 	}
-
 	if message == "" {
-		return newRequiredParam("message")
+		return newErrorRequiredParam("message")
 	}
-
 	if scope != "" {
 		scope = fmt.Sprintf("[%s]", scope)
 	}
-
 	tagWithColor := color.New(col, color.Bold).SprintFunc()(tag)
-
-	line := fmt.Sprintf(
-		"%s %s %s\n",
-		scope,
-		tagWithColor,
-		message,
-	)
-
+	line := fmt.Sprintf("%s %s %s\n", scope, tagWithColor, message)
 	_, err := os.Stderr.WriteString(line)
-
 	return err
 }
 
@@ -61,14 +50,12 @@ func Head(name string, icon string, version string) error {
 	if version != "" {
 		version = fmt.Sprintf("\t(v%s)", version)
 	}
-
 	_, err := os.Stderr.WriteString(fmt.Sprintf(
 		"\n\t%s %s\n%s\n\n",
 		icon,
 		color.New(color.Bold).SprintFunc()(name),
 		color.New(color.Faint).SprintFunc()(version),
 	))
-
 	return err
 }
 
@@ -123,7 +110,6 @@ func Done(message string, scope string) error {
 // Remove deletes the actual line..
 func Remove() error {
 	_, err := os.Stderr.WriteString("\r")
-
 	return err
 }
 
@@ -132,9 +118,8 @@ func Remove() error {
 // - `message`: String to print.
 func Result(message string) error {
 	if message == "" {
-		return newRequiredParam("message")
+		return newErrorRequiredParam("message")
 	}
-
 	_, err := os.Stdout.WriteString(message + "\n")
 	return err
 }
