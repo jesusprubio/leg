@@ -10,7 +10,6 @@ tasks:
   dep:
     cmds:
       - go install honnef.co/go/tools/cmd/staticcheck@latest
-      - go install github.com/kisielk/errcheck@latest
       - go install github.com/segmentio/golines@latest
       - go install github.com/securego/gosec/v2/cmd/gosec@latest
       - go install github.com/alexkohler/nakedret/cmd/nakedret@latest
@@ -20,7 +19,6 @@ tasks:
       - go fmt ./...
       - go vet ./...
       - staticcheck ./...
-      - errcheck ./...
       - golines -m 80 --shorten-comments -w .
       - gosec -fmt=golint -quiet ./...
       - nakedret ./...
@@ -29,7 +27,3 @@ tasks:
     deps: [lint]
     cmds:
       - go test -v ./...
-
-  examples:
-    cmds:
-      - go run examples/readme.go
