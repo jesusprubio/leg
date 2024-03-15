@@ -4,6 +4,7 @@
 
 - [Task](https://taskfile.dev/installation/)
 - Linters:
+
 ```sh
 task dep
 ```
