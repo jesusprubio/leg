@@ -2,11 +2,15 @@
 
 🔈 **Nicer CLIs foz lazy devs**
 
-<img width="344" alt="Screenshot 2023-03-06 at 14 18 25" src="https://user-images.githubusercontent.com/2753855/223247609-2ab48185-b26f-4763-ba33-ecc9bdc6f07a.png">
+<img
+  width="344" alt="Screenshot 2023-03-06 at 14 18 25"
+  src="https://user-images.githubusercontent.com/2753855/223247609-2ab48185-b26f-4763-ba33-ecc9bdc6f07a.png"
+>
 
 [![GoDoc][doc-img]][doc] [![Build Status][ci-img]][ci]
 
-Simple helpers to beauty my command line application prototypes with minimal effort.
+Tiny wrapper over go printtttt helpers to beauty my command line application
+prototypes with minimal effort.
 
 - Prints to `stderr`.
 - Thanks to [color](https://github.com/fatih/color) library:
@@ -15,15 +19,17 @@ Simple helpers to beauty my command line application prototypes with minimal eff
 
 ## Install
 
-🍕 With a [Go](https://go.dev/doc/install) stable version:
-
 ```sg
 go get -u github.com/jesusprubio/leg
 ```
 
+### Dependencies
+
+- [Go](https://go.dev/doc/install) stable version.
+
 ## Use
 
-📝 Visit the [tests](leg_test.go) if you want to check more details.
+Visit the [tests](leg_test.go) to check more details.
 
 ```golang
 leg.Head("mumu", "🐘", "0.1.0")
