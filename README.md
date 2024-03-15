@@ -4,8 +4,7 @@
 
 <img
   width="344" alt="Screenshot 2023-03-06 at 14 18 25"
-  src="https://user-images.githubusercontent.com/2753855/223247609-2ab48185-b26f-4763-ba33-ecc9bdc6f07a.png"
->
+  src="https://user-images.githubusercontent.com/2753855/223247609-2ab48185-b26f-4763-ba33-ecc9bdc6f07a.png">
 
 [![GoDoc][doc-img]][doc] [![Build Status][ci-img]][ci]
 
