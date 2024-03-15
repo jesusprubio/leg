@@ -1,37 +1,27 @@
-on: [push, pull_request]
+on:
+  push:
+    branches:
+    - main
+  pull_request:
 
 name: CI
 
 jobs:
-  lint:
-    name: Lint
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repo
-        uses: actions/checkout@v3
-      - name: Install Go
-        uses: actions/setup-go@v3
-        with:
-          go-version: "1.19.5"
-      - name: Install Task
-        uses: arduino/setup-task@v1
-      - name: Install dependencies
-        run: task dep
-      - name: Run linters
-        run: task lint
   test:
     name: Unit tests
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Install Go
-        uses: actions/setup-go@v3
+        uses: actions/setup-go@v4
         with:
-          go-version: "1.21.1"
+          go-version: "1.22.1"
       - name: Install Task
         uses: arduino/setup-task@v2
       - name: Install dependencies
         run: task dep
-      - name: Run tests
+      - name: Lint
+        run: task lint
+      - name: Test
         run: task test

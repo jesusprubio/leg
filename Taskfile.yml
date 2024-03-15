@@ -1,7 +1,7 @@
 version: "3"
 
 tasks:
-  default: task lint test
+  default: task lint test fmt
 
   clean:
     cmds:
@@ -14,16 +14,18 @@ tasks:
       - go install github.com/securego/gosec/v2/cmd/gosec@latest
       - go install github.com/alexkohler/nakedret/cmd/nakedret@latest
 
-  lint:
+  fmt:
     cmds:
       - go fmt ./...
+      - golines -m 80 --shorten-comments -w .
+
+  lint:
+    cmds:
       - go vet ./...
       - staticcheck ./...
-      - golines -m 80 --shorten-comments -w .
       - gosec -fmt=golint -quiet ./...
       - nakedret ./...
 
   test:
-    deps: [lint]
     cmds:
       - go test -v ./...
