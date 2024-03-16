@@ -8,8 +8,7 @@
 
 [![GoDoc][doc-img]][doc] [![Build Status][ci-img]][ci]
 
-Tiny wrapper over go printtttt helpers to beauty my command line application
-prototypes with minimal effort.
+Tiny wrapper over to beauty command line application prototypes with a minimal effort.
 
 - Prints to `stderr`.
 - Thanks to [color](https://github.com/fatih/color) library:
