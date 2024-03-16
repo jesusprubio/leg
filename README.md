@@ -8,7 +8,7 @@
 
 [![GoDoc][doc-img]][doc] [![Build Status][ci-img]][ci]
 
-Tiny wrapper over to beauty command line application prototypes with a minimal effort.
+Tiny wrapper to beauty command line application prototypes with a minimal effort.
 
 - Prints to `stderr`.
 - Thanks to [color](https://github.com/fatih/color) library:
