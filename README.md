@@ -1,5 +1,7 @@
 # leg
 
+**Archived**, now using [charmbracelet/log](https://github.com/charmbracelet/log).
+
 🔈 **Nicer CLIs foz lazy devs**
 
 <img
