@@ -1,6 +1,8 @@
 # leg
 
-**Archived**, now using [charmbracelet/log](https://github.com/charmbracelet/log).
+**Archived**, now just using [slog](https://go.dev/blog/slog).
+
+***
 
 <img
   width="344" alt="Screenshot 2023-03-06 at 14 18 25"
